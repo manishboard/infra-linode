@@ -1,32 +1,25 @@
-variable "environment" {
-  type    = string
-  default = "global"
-}
-
-variable "project" {
-  type    = string
-  default = "manishboard"
-}
-
-variable "resource" {
-  type    = string
-  default = "manish"
-}
-
-variable "iac" {
-  type    = string
-  default = "terraform"
+variable "linode_api_token" {
+  description = "Your Linode API token"
+  type        = string
+  sensitive   = true
 }
 
 variable "region" {
-  type    = string
-  default = "us-east-2"
+  description = "The region where the cluster will be deployed"
+  type        = string
 }
 
-variable "keyPair" {
-  type    = string
-  default = "keyPair"
+variable "k8s_version" {
+  description = "The Kubernetes version to use"
+  type        = string
 }
 
+variable "clusterName" {
+  description = "The Name for the Kubernetes cluster"
+  type        = string
+}
 
-
+variable "nodeType" {
+  description = "The nodeType of the cluster"
+  type        = string
+}
